@@ -87,12 +87,18 @@ var finances = [
 ['Feb-2017', 671099]
 ];
 
-let financesMonths = finances.length;
+const financesMonths = finances.length;
 console.log(financesMonths);
+let total = 0;
+
+// const total = finances.reduce((amount,finances))
 
 
-
-
+for (let i=0; i<finances.length; i++) 
+{
+  total += finances[i][1];
+}
+console.log(total);
 
 
 
