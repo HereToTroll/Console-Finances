@@ -92,7 +92,8 @@ console.log(financesMonths);
 let total = 0;
 let average = [];
 // const total = finances.reduce((amount,finances))
-
+let averageChange = 0;
+let sum = 0;
 
 for (let i=0; i<finances.length; i++) 
 {
@@ -109,6 +110,17 @@ for (let i=0; i<finances.length; i++)
   }
 }
 
+for (let i = 0; i < average.length; i++) {
+  sum = sum + average[i] ;
+}
+averageChange = sum / average.length
+console.log(sum);
+console.log(Math.max.apply(Math,average));
+console.log(Math.min.apply(Math,average));
+
+// Tried new way, but it seem to be a bit complicated for me now so decided to stick for now to the basics.
+/* const sum = average.reduce((total,item) => total + item);
+averageChange = sum / average.length; */
 
 /* You have been given a dataset composed of arrays with two fields, Date and Profit/Losses.
 
