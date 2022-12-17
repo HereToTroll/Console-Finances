@@ -90,7 +90,7 @@ var finances = [
 const financesMonths = finances.length;
 console.log(financesMonths);
 let total = 0;
-
+let average = [];
 // const total = finances.reduce((amount,finances))
 
 
@@ -100,6 +100,14 @@ for (let i=0; i<finances.length; i++)
 }
 console.log(total);
 
+for (let i=0; i<finances.length; i++)
+{
+  if (i !== finances.length-1) 
+  {
+    average.push(finances[i+1][1] - finances[i][1]);
+    console.log(average[i])
+  }
+}
 
 
 /* You have been given a dataset composed of arrays with two fields, Date and Profit/Losses.
@@ -113,7 +121,7 @@ Your task is to write JavaScript code that analyzes the records to calculate eac
 * The average of the **changes** in Profit/Losses over the entire period.
   * You will need to track what the total change in profits are from month to month and then find the average.
   * (`Total/Number of months`)
-
+  Check condition which number is bigger in array finances[i][1] or finances[i+1][1] and then subtract accordingly. Also I need to make sure I dont do this during last loop iteration.
 * The greatest increase in profits (date and amount) over the entire period.
 
 * The greatest decrease in losses (date and amount) over the entire period.
