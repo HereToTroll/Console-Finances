@@ -88,35 +88,43 @@ var finances = [
 ];
 
 const financesMonths = finances.length;
-console.log(financesMonths);
 let total = 0;
 let average = [];
-// const total = finances.reduce((amount,finances))
 let averageChange = 0;
 let sum = 0;
 
-for (let i=0; i<finances.length; i++) 
+for (let i=0; i < finances.length; i++) 
 {
   total += finances[i][1];
 }
-console.log(total);
+
 
 for (let i=0; i<finances.length; i++)
 {
   if (i !== finances.length-1) 
   {
     average.push(finances[i+1][1] - finances[i][1]);
-    console.log(average[i])
   }
 }
 
 for (let i = 0; i < average.length; i++) {
   sum = sum + average[i] ;
 }
-averageChange = sum / average.length
-console.log(sum);
+averageChange = sum / average.length;
+
+// I made everything with one console.log using \n and + as I thought it will be a bit harder than using multiple console.log's. 
+// Also Used toFixed method to get only 2 digits after "," in averageChange variable. Method names Math.min and Math.Max speak for themselves. Apply used to use method on array. According to mdn.
+
+
+console.log(" Financial Analysis \n ----------------------------\n"+ " Total Months:", financesMonths,"\n Total: " +"$", total, "\n Average Change: " + "$",
+averageChange.toFixed(2), "\n Greatest Increase in Profits: "+"$", (Math.max.apply(Math,average)), "\n Greatest Decrease in Profits: "+"$", (Math.min.apply(Math,average)) );
+
+
+//First solution just to get an idea if my numbers were correct.
+/* console.log(averageChange);
 console.log(Math.max.apply(Math,average));
 console.log(Math.min.apply(Math,average));
+console.log(finances[1][1]); */
 
 // Tried new way, but it seem to be a bit complicated for me now so decided to stick for now to the basics.
 /* const sum = average.reduce((total,item) => total + item);
